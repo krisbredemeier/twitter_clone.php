@@ -1,0 +1,639 @@
+/***************** http://meyerweb.com/eric/tools/css/reset/ ******************
+****************** v2.0 | 20110126 License: none (public domain)   ************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+body {
+	background-color: #cc6666;
+	font-family: Arial; Geneva, sans-serif;
+	font-size: 16px;
+	border-style: solid;
+	border-width: 15px;
+	border-color: #cc6666;
+}
+
+#container {
+	width: 992px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/****************** Prefixes for Browsers ******************/
+/*
+Here be dragons! Lots of (syntax) changes
+Read: http://css-tricks.com/old-flexbox-and-new-flexbox/
+
+Mixing both old- and new syntax http://css-tricks.com/using-flexbox/
+
+Thank you @chriscoyier !
+*/
+
+.page-wrap {
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+}
+
+.main-nav,
+.main-sidebar {
+  -webkit-box-flex: 1;   /* OLD - iOS 6-, Safari 3.1-6 */
+  width: 20%;            /* For old syntax, otherwise collapses. */
+  -webkit-flex: 1;       /* Safari 6.1+. iOS 7.1+, BB10 */
+  -ms-flex: 1;           /* IE 10 */
+  flex: 1;               /* NEW, Spec - Firefox, Chrome, Opera */
+}
+
+
+/****************** Button Styling ******************/
+
+.button {
+    margin: 10px 20px;
+	text-align: center;
+	padding: 5px 25px;
+	border: 1px;
+	border-radius: 25px;
+	border-color: black;
+    list-style:none;
+	background: linear-gradient(0deg, #ddeeaa, #ffcc99);
+}
+
+
+/******************* Text Styling ********************/
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 17px;
+}
+
+/******************* Header Styles *******************/
+
+header {
+	display: flex;
+    flex-direction: column;
+    margin-bottom: 0 10px 40px 10px;
+}
+
+#header_block {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    background-color: #ffeee5;
+    margin: 17px 10px 3px 10px;
+}
+
+#warbler_logo {
+    width: 100px;
+    height: 100px;
+	margin: 15px auto;
+}
+
+h1 {
+    font-family: Arial, cursive;
+	font-size: 80px;
+}
+
+#tag_line {
+	margin: 10px 10px 10px 15px;
+}
+
+#log_in_links {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+	margin: 10px;
+	color: #ff944d;
+}
+
+#log_in_links li {
+	display: inline;
+}
+
+#log_in_links li:after {
+    content: "|";
+}
+
+#log_in_links li:last-child:after {
+    content: "";
+}
+
+#log_in_links a:visited {
+	color: pink;
+}
+
+#log_in_links a{
+	color: #ff944d;
+	padding: 3px;
+	text-decoration: none;
+    transition-property: background;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+
+    -webkit-transition-property: background;
+       -moz-transition-property: background;
+         -o-transition-property: background;
+            transition-property: background;
+    -webkit-transition-duration: 2s;
+       -moz-transition-duration: 2s;
+         -o-transition-duration: 2s;
+            transition-duration: 2s;
+    -webkit-transition-timing-function: linear;
+       -moz-transition-timing-function: linear;
+         -o-transition-timing-function: linear;
+            transition-timing-function: linear;
+}
+
+#log_in_links a:hover {
+	color: #ff5050;
+	background-color: #ffdd99;
+	padding: 3px;
+	text-decoration: underline;
+}
+
+#log_in_links a:active {
+	color: black;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+#menu li {
+	margin: 10px;
+	text-align: center;
+	padding: 5px 25px;
+	border: 1px;
+	border-radius: 25px;
+	border-color: black;
+    list-style:none;
+	background: linear-gradient(0deg, #ffdd99, #ffbb99);
+}
+
+#menu li:hover {
+	background: linear-gradient(0deg, #ffbb99, #ffdd99);
+}
+
+#menu li:active {
+	background: #ff6666;
+}
+
+#menu a {
+	text-decoration: none;
+}
+
+
+/****************** Main Styles *********************/
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+section {
+	width: 60%;
+}
+
+section div.orange {
+	background-color: #ffbb99;
+}
+
+h2 {
+  font-family: Arial, cursive;
+  text-align: center;
+  font-size: 4vw;
+  color: pink;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+#post_link {
+    display: flex;
+    justify-content: center;
+    margin: 0 50px 40px 50px;
+		display: none;
+}
+
+textarea {
+    width: 97%;
+}
+
+.status_update {
+    display: flex;
+	padding: 10px;
+	margin: 10px 10px 0px 10px;
+}
+
+.status_img {
+	width: 200px;
+}
+
+.image_block {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 30px 0 10px;
+}
+
+.image_block img {
+    margin-bottom: 10px;
+}
+
+.status_update p {
+    margin: 10px;
+}
+
+#status_form {
+    display: block;
+}
+
+.reply_div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px 10px 10px 10px;
+    padding: 10px 10px 20px 30px;
+}
+
+.reply_link {
+    text-align: center;
+    margin-bottom: 20px;
+		display: none;
+}
+
+.reply_form {
+    display: block;
+}
+
+.reply_div label {
+    display: block;
+}
+
+.reply_form textarea {
+    width: 95%;
+}
+
+/****************** Aside Styles *********************/
+
+aside {
+	width: 37%;
+	display: inline-block;
+    display: flex;
+    flex-direction: column;
+}
+
+aside div {
+	background-color: #ffdd99;
+}
+
+.bio_block {
+	padding: 10px;
+    margin-top: 20px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #8a99a8;
+}
+
+.bio_block img {
+	width: 200px;
+}
+
+.bio_block .image_block {
+	margin: 0 50px 10px 50px;
+	padding: 15px;
+	background-color: #8a99a8;
+	color: white;
+	text-align: center;
+}
+
+.bio_block p {
+	padding-bottom: 20px;
+}
+
+/****************** Footer Styles *********************/
+
+.footer_background {
+	background: url(https://intranet.hbtn.io/images/contents/higher_level_programming/projects/twitter/dark-background.jpg) center top;
+	bottom: 2px;
+	float: left;
+	height: 100px;
+	position: relative;
+	width: 100%;
+	margin: 10px 0px;
+	display: flex;
+	justify-content: center;
+}
+.twitter-follow-button {
+	margin-top: 35px;
+}
+
+
+
+#footer_msg {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	color: white;
+	background-color: #ff944d;
+	padding: 10px;
+}
+
+#log_out {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 22px;
+}
+
+/****************** Styles for List of User Profile Page *********************/
+
+.profile_bio {
+	float: left;
+	clear: right;
+	padding: 10px;
+	margin: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #8a99a8;
+}
+
+.profile_bio img {
+	width: 200px;
+}
+
+.profile_bio .image_block {
+	margin: 0 50px 10px 50px;
+	padding: 15px;
+	background-color: #8a99a8;
+	color: white;
+	text-align: center;
+}
+
+.profile_bio p {
+	padding-bottom: 20px;
+}
+
+
+.profile_bio p {
+	display: inline;
+}
+
+#profile_section {
+	width: 40%;
+	float: left;
+	clear: left;
+}
+
+#aside_section {
+	width: 60%;
+}
+
+.profile_picture{
+	width: 75px;
+	padding-bottom: 10px;
+}
+
+/****************** Styles for List of All Users Page *********************/
+
+.loau_block {
+	float: left;
+	clear: right;
+	padding: 10px;
+	margin: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #8a99a8;
+}
+
+.loau_block img {
+	width: 200px;
+}
+
+.loau_block .image_block {
+	display: inline-block;
+	float: left;
+	margin: 0 50px 10px 50px;
+	padding: 15px;
+	background-color: #8a99a8;
+	color: white;
+	text-align: center;
+}
+
+.loau_paragraph {
+	display: inline-block;
+	float: left;
+	width: 60%;
+	text-align: left;
+	font-size: 18px;
+}
+
+.bio_block p {
+	padding-bottom: 20px;
+}
+
+.about_block {
+	float: left;
+	clear: right;
+	padding: 10px;
+	margin: 10px;
+}
+
+/****************** Media Queries *********************/
+
+@media only screen and (max-width: 992px) {
+    #container {
+        width: 100%;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 16px; font-size: 8vw;
+    }
+
+    #menu li {
+    }
+
+    #loginmenu {
+        height: 30px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #loginmenu ol {
+        list-style:none;
+        margin:0;
+        padding:0;
+        text-align:center;
+    }
+
+    #log_in_links li {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    section {
+        width: 100%
+    }
+
+    aside {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        clear: none;
+    }
+
+    .status_img {
+        max-width: 200px;
+        width: 80%;
+    }
+
+    .bio_block img {
+        min-width: 1px;
+        width: 100%;
+    }
+
+    #block {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    #block2 {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+
+/* for phone screens */
+@media only screen and (max-width: 768px), {
+
+    #container {
+        width: 100%;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 16px; font-size: 8vw;
+    }
+
+    #loginmenu {
+        height: 30px;
+    }
+
+    #loginmenu ol {
+        list-style:none;
+        margin:0;
+        padding:0;
+        text-align:center;
+    }
+
+    #log_in_links li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    section {
+        width: 100%
+    }
+
+    aside {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .bio_block {
+        clear: none;
+    }
+
+    #block {
+        flex: 1 auto;
+        margin-right: 0px;
+    }
+
+    #block2 {
+        flex: 1 auto;
+        margin-left: 0px;
+    }
+
+    .status_img {
+        max-width: 200px;
+        width: 80%;
+    }
+
+    .bio_block img {
+        min-width: 100px;
+        width: 100%;
+    }
+}
+} /* not sure what this bracket is for...
+/****************** Map Styling *********************/
+
+#mapContainer {
+    width: 2000px;
+    height: 1800px;
+    margin: 0 auto;
+    background-color: none;
+}
