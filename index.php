@@ -8,17 +8,18 @@
   <?php
   function userExists($login, $password, $users){
     foreach($users as $user) {
-      if($user['login'] == $login);
-      if($user['password'] == $password);
+      if($user['login'] == $login && $user['password'] == $password){
         return $user['full_name'];
+      }
     }
     return false;
 }
 $failed = false;
 $msg = '';
-if (isset($_POST['login']) && !empty($_POST['username'])
+if (isset($_POST['username']) && !empty($_POST['username'])
    && !empty($_POST['password'])) {
-     $_SESSION["user"] = userExists($_POST['login'], $_POST['password'], $users);
+     $_SESSION["user"] = userExists($_POST['username'], $_POST['password'], $users);
+
 
    if ($_SESSION["user"] != false) {
       $_SESSION['valid'] = true;
@@ -69,14 +70,16 @@ if (isset($_POST['login']) && !empty($_POST['username'])
                         <img id="warbler_logo" width="100" src="http://www.procliparts.com/cliparts/pele/ekiE9gTAo-orange-bird.png" alt="log">
 
                         <h2><?php echo $msg; ?></h2>
-                        <?php if (isset($_POST['login'])) { ?>
-                        <p>hello <?php echo $_POST['username']; ?></p>
+                        <?php if ($_SESSION["user"]) { ?>
+                        <p>hello <?php echo $_SESSION["user"]; ?></p>
                         <p> Your rot13’d login is: <?php
-                        echo (str_rot13($_POST['password']));
+                        echo (str_rot13($_POST['username']));
                         ?></p>
                         <p> The length of your login is:  <?php
-                        echo (strlen ($_POST['password']));
+                        echo (strlen ($_POST['username']));
                         ?></p>
+                        <?php } elseif(isset($_POST['username'])) { ?>
+                        <p>hello <?php echo $_POST['username']; ?></p>
                         <?php } else echo 'Hello there' ?>
 
 
